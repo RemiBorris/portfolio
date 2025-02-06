@@ -1,35 +1,73 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from "react";
+import { BrowserRouter as Router, Routes, Route, Link, useLocation } from "react-router-dom";
+import Home from "./pages/Home";
+import Resume from "./pages/Resume";
+import Projects from "./pages/Projects";
+import Contact from "./pages/Contact";
 
-function App() {
-  const [count, setCount] = useState(0)
+const NavBar = () => {
+  const location = useLocation();
+
+  const isActive = (path) => location.pathname === path;
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <nav className="bg-blue-600 text-white py-4 shadow-md">
+      <div className="container mx-auto flex justify-center space-x-6">
+        <Link
+          to="/"
+          className={`hover:text-gray-300 transition ${isActive("/") ? "font-bold underline" : ""}`}
+        >
+          Home
+        </Link>
+        <Link 
+          to="/resume"
+          className={`hover:text-gray-300 transition ${isActive("/resume") ? "font-bold underline" : ""}`}
+        >
+          Resume
+        </Link>
+        <Link 
+          to="/projects" 
+          className={`hover:text-gray-300 transition ${isActive("/projects") ? "font-bold underline" : ""}`}
+        >
+          Projects
+        </Link>
+        <Link 
+          to="/contact" 
+          className={`hover:text-gray-300 transition ${isActive("/contact") ? "font-bold underline" : ""}`}
+        >
+          Contact
+        </Link>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    </nav>
+    
   )
 }
 
-export default App
+const App = () => {
+
+  return (
+    <Router>
+      <div className="min-h-screen flex flex-col bg-gray-100">
+        {/* Navbar */}
+        <NavBar />
+
+        {/* Page Content */}
+        <div className="container mx-auto flex-grow p-6">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/resume" element={<Resume />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </div>
+
+        {/* Footer */}
+        <footer className="bg-gray-800 text-gray-300 text-center py-4 mt-12">
+        © {new Date().getFullYear()} Remi Borris | Portfolio
+        </footer>
+      </div>
+    </Router>
+  );
+};
+
+export default App;
