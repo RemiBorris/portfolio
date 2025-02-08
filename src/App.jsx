@@ -11,7 +11,7 @@ const NavBar = () => {
   const isActive = (path) => location.pathname === path;
 
   return (
-    <nav className="bg-blue-600 text-white py-4 shadow-md">
+    <nav className="bg-blue-600 text-white py-4 shadow-md fixed top-0 right-0 left-0 z-10">
       <div className="container mx-auto flex justify-center space-x-6">
         <Link
           to="/"
