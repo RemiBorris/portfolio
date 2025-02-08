@@ -52,7 +52,7 @@ const App = () => {
         <NavBar />
 
         {/* Page Content */}
-        <div className="container mx-auto flex-grow p-6">
+        <div className="container mx-auto flex-grow p-16">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/resume" element={<Resume />} />
