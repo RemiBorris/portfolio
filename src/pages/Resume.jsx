@@ -7,35 +7,39 @@ pdfjs.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pd
 const Resume = () => {
   const [numPages, setNumPages] = useState(null);
 
-  return (
-    <div className="flex flex-col items-center p-6">
-      <h2 className="text-2xl font-bold mb-4">Resume</h2>
+  const onDocumentLoadSuccess = ({ numPages }) => {
+    setNumPages(numPages);
+  };
 
-      <div className="border rounded-lg shadow-lg p-4 w-full max-w-3xl">
+  return (
+    <div className="flex flex-col items-center justify-center p-4">
+      <h2 className="text-2xl font-bold mb-4 text-center">My Resume</h2>
+
+      <div className="w-full max-w-screen-md overflow-hidden flex justify-center overflow-auto">
         <Document
           file="/Remi-Borris-Resume.pdf"
-          renderMode="canvas"
-          onLoadSuccess={({ numPages }) => setNumPages(numPages)}
-          onLoadError={(error) => console.error("Error loading PDF:", error)}
+          onLoadSuccess={onDocumentLoadSuccess}
+          className="flex flex-col items-center"
         >
-          {Array.from({ length: numPages || 0 }, (_, index) => (
-            <Page key={index} pageNumber={index + 1} />
-          ))}
+          {numPages &&
+            Array.from(new Array(numPages), (el, index) => (
+              <Page 
+                key={`page_${index + 1}`} 
+                pageNumber={index + 1} 
+                renderTextLayer={false} 
+                renderAnnotationLayer={false} 
+                className="w-full max-w-full h-auto"
+                scale={1.0}
+              />
+            ))
+          }
         </Document>
       </div>
 
-      <Button
-        text="Download PDF"
-        variant="primary"
-        onClick={() => {
-          const link = document.createElement("a");
-          link.href = "/Remi-Borris-Resume.pdf"; // Path to PDF
-          link.download = "Remi-Borris-Resume.pdf"; // Suggested download name
-          document.body.appendChild(link);
-          link.click();
-          document.body.removeChild(link);
-        }}
-      />
+      {/* Download Button */}
+      <a href="/Remi-Borris-Resume.pdf" download className="mt-4">
+        <Button text="Download Resume" />
+      </a>
     </div>
   );
 };
