@@ -1,6 +1,5 @@
 import React from "react";
-import { FaGithub, FaPhoneAlt } from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa6";
+import { FaGithub, FaLinkedin, FaPhoneAlt } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 
 const Contact = () => {
@@ -11,38 +10,39 @@ const Contact = () => {
       <ul className="space-y-2 text-gray-700">
         <li className="flex items-center space-x-2">
           <MdEmail className="text-lg"/> 
-          <span className="font-semibold">Email:</span>{" "}
+          <span className="hidden sm:inline font-semibold">Email:</span>{" "}
           <a 
             href="mailto:remi.borris@gmail.com"
-            className="text-blue-500 hover:underline"
+            className="text-blue-500 hover:underline font-semibold"
           >
             RemiBorris@gmail.com 
           </a>
         </li>
         <li className="flex items-center space-x-2">
           <FaPhoneAlt className="text-lg"/>
-          <span className="font-semibold">Phone: 506-380-1101</span>
+          <span className="hidden sm:inline font-semibold">Phone:</span>
+          <span className="font-semibold">506-380-1101</span>
         </li>
         <li className="flex items-center space-x-2">
           <FaLinkedin className="text-lg"/>
-          <span className="font-semibold">LinkedIn:</span>{" "}
+          <span className="hidden sm:inline font-semibold">LinkedIn:</span>{" "}
           <a
             href="https://linkedin.com/in/RemiBorris"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-blue-500 hover:underline"
+            className="text-blue-500 hover:underline font-semibold"
           >
             linkedin.com/in/RemiBorris
           </a>
         </li>
         <li className="flex items-center space-x-2">
           <FaGithub className="text-lg"/>
-          <span className="font-semibold">GitHub:</span>{" "}
+          <span className="hidden sm:inline font-semibold">GitHub:</span>{" "}
           <a
             href="https://github.com/RemiBorris"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-blue-500 hover:underline"
+            className="text-blue-500 hover:underline font-semibold"
           >
           github.com/RemiBorris
           </a>
