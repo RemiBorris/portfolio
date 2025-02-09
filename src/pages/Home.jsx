@@ -1,5 +1,6 @@
 import React from "react";
 import headshot from "../assets/images/Remi Borris - Headshot.jpg"
+import { Link } from "react-router-dom";
 
 const Home = () => {
 
@@ -21,7 +22,7 @@ const Home = () => {
             My journey into web development was fueled by my love for problem-solving and technology. After spending over a decade in operations management, where I honed skills in project planning, communication, and team leadership, I took on the challenge of transitioning into software development. Balancing full-time work while completing an intensive Web Development Diploma at Lighthouse Labs was both demanding and rewarding, reinforcing my ability to adapt, learn quickly, and stay committed to my goals.
           </p>
           <p>
-            Through projects like <a href="/projects"className="font-semibold text-blue-500 hover:underline">Flex Forge</a>,{" "}
+            Through projects like <Link to="/projects" className="font-semibold text-blue-500 hover:underline">Flex Forge</Link>,{" "}
             <a href="/projects" className="font-semibold text-blue-500 hover:underline">PhotoLabs</a>, and{" "}
             <a href="/projects" className="font-semibold text-blue-500 hover:underline">SmartTODO</a>, I have applied my knowledge to develop functional, scalable applications that enhance user experience. I am eager to continue learning and growing in this field, applying my technical expertise, problem-solving abilities, and strong work ethic to real-world development challenges.
           </p>
