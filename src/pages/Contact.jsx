@@ -1,5 +1,6 @@
 import React from "react";
-import { FaGithub, FaLinkedin, FaPhoneAlt } from "react-icons/fa";
+import { FaGithub, FaPhoneAlt } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
 
 const Contact = () => {
