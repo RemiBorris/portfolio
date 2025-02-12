@@ -21,7 +21,14 @@ const Contact = () => {
         <li className="flex items-center space-x-2">
           <FaPhoneAlt className="text-lg"/>
           <span className="hidden sm:inline font-semibold">Phone:</span>
-          <span className="font-semibold">506-380-1101</span>
+          <a
+            href="tel:506-380-1101"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-500 hover:underline font-semibold"
+          >
+            506-380-1101
+          </a>
         </li>
         <li className="flex items-center space-x-2">
           <FaLinkedin className="text-lg"/>
