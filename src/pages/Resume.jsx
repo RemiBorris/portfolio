@@ -15,7 +15,7 @@ const Resume = () => {
     <div className="flex flex-col items-center justify-center p-4 pt-6">
       <h2 className="text-2xl font-bold mb-4 text-center">My Resume</h2>
 
-      <div className="w-full max-w-screen-md flex md:justify-center overflow-auto">
+      <div className="hidden md:flex w-full max-w-screen-md md:justify-center overflow-auto">
         <Document
           file="/Remi-Borris-Resume.pdf"
           onLoadSuccess={onDocumentLoadSuccess}
