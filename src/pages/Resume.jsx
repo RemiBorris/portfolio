@@ -13,7 +13,7 @@ const Resume = () => {
 
       <iframe
         src={(resumePreviewURL)}
-        className="hidden md:flex w-full max-w-screen-lg h-[600px] border border-gray-300"
+        className="hidden md:flex w-full max-w-screen-lg h-[calc(100vh-350px)] border border-gray-300"
       ></iframe>
 
       {/* Download Button */}
