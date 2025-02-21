@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "../components/Button";
 
-const resumeID = "1445dR0_J_1Ue9Is2QzAyyawuySC_o1hR";
+const resumeID = "1H0q4OQaAcawpHDqHRWNNUHy0pBV63qcV";
 const resumePreviewURL = `https://drive.google.com/file/d/${resumeID}/preview`;
 const resumeDownloadURL = `https://drive.google.com/uc?export=download&id=${resumeID}`;
 
