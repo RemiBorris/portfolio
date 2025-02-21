@@ -36,10 +36,10 @@ const Projects = () => {
   }, [location]);
 
   return (
-    <div className="max-w-4xl mx-auto p-6">
+    <div className="md:max-w-4x1 lg:max-w-6xl mx-auto p-6">
       {/* <img src="/videos/flexForge.gif" alt="Flex Forge" /> */}
       <h2 className="text-2xl font-bold mb-4 text-center">Projects</h2>
-      <div className="lg:grid lg:grid-cols-2 lg:gap-10">
+      <div className="md:grid xl:grid-cols-3 md:gap-10 lg:grid-cols-2 grid-cols-1 gap-6">
         <ProjectCard
           title="Flex Forge"
           // videoSrc="/videos/flexForge.mp4"
